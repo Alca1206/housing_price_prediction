@@ -46,7 +46,7 @@ Docker will automatically build the images, install the required dependencies (u
 
 Streamlit Frontend: Open your browser and go to http://localhost:8501
 
-FastAPI Interactive Docs: Open your browser and go to http://localhost:8000/docs
+FastAPI Interactive Docs: Open your browser and go to http://localhost:8000/docs. Since there is docker implemtation in project the Url is changed to http://api:8000/docs.
 
 ### 3. Stop the Containers
 When you are finished, simply press Ctrl + C in your terminal, or run:
