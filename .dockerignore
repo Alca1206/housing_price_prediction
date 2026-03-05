@@ -1,0 +1,16 @@
+# Ignore virtual environments
+venv/
+env/
+.env
+
+# Ignore Jupyter Notebooks and data
+notebooks/
+*.zip
+*.csv
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore Git files
+.git/
