@@ -8,11 +8,15 @@ This project is a full-stack machine learning application designed to estimate r
 * **Model:** Deep Learning Neural Network built with PyTorch (Feedforward Network).
 * **Backend:** REST API built with FastAPI.
 * **Frontend:** Interactive web dashboard built with Streamlit.
+* **Deployment (MLOps):** Fully containerized and orchestrated using Docker & Docker Compose for guaranteed reproducibility.
 
 ## 📂 Repository Structure
 ```text
 king-county-house-prices/
 │
+├── .dockerignore                # Ignored files for Docker build
+├── docker-compose.yml           # Orchestrates the multi-container application
+├── Dockerfile                   # Blueprint for the Python environment
 ├── .gitignore                   # Ignored files (__pycache__, etc.)
 ├── requirements.txt             # Python dependencies
 ├── README.md                    # Project documentation
@@ -26,6 +30,29 @@ king-county-house-prices/
 └── src/                         
     ├── main.py                  # FastAPI Backend Server
     └── app.py                   # Streamlit Frontend UI
+```
+## 🐳 How to Run with Docker (Recommended)
+This project is fully containerized using Docker Compose, ensuring a 100% reproducible environment across any machine.
+
+### 1. Build and Start the Containers
+Ensure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running. Open your terminal in the root directory of the project and run:
+
+```bash
+docker-compose up --build
+```
+
+### 2. Access the Application
+Docker will automatically build the images, install the required dependencies (using a lightweight CPU-only PyTorch build), and spin up both services simultaneously:
+
+Streamlit Frontend: Open your browser and go to http://localhost:8501
+
+FastAPI Interactive Docs: Open your browser and go to http://localhost:8000/docs
+
+### 3. Stop the Containers
+When you are finished, simply press Ctrl + C in your terminal, or run:
+```
+bash
+docker-compose down
 ```
 
 ## 📋 Requirements
