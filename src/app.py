@@ -63,7 +63,7 @@ if st.button("🔮 Predict House Price", use_container_width=True):
      }
     
         try:
-            response = requests.post("http://localhost:8000/predict", json=input_data)
+            response = requests.post("http://api:8000/predict", json=input_data)
             if response.status_code == 200:
                 result = response.json()
                 price = result["predicted_price"]
